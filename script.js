@@ -19,12 +19,12 @@ function addBookToLibrary() {
     let pages = document.querySelector("#pages").value
     let read =  document.querySelector("#read").checked
         if(read === false){
-            read = 'not read'
-             }else{read = 'read'}
+            read = 'Not read'
+             }else{read = 'Read'}
         
     let book = new Book(title, author, pages, read)
     myLibrary.push(book);
-    bob()
+    append()
     form.reset()
 }
 //array to store books
@@ -32,7 +32,7 @@ let myLibrary = [];
 
 //display books on screen
 let books = document.getElementById('array');
-function bob() {for (objects of myLibrary) {
+function append() {for (objects of myLibrary) {
     // each book property
     for (let prop in objects) {
        Object.prototype.hasOwnProperty.call(prop) 
@@ -43,6 +43,4 @@ function bob() {for (objects of myLibrary) {
       }   
   }}
 
-//submit btn
-  const formInfo = document.querySelector(".formInfo")
-  formInfo.addEventListener('click', addBookToLibrary)
+  // delete button

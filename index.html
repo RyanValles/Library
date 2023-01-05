@@ -10,16 +10,16 @@
 <body>
     <div id = 'leftSide'>
         <h1>Library</h1>
-        <form>
-            <label for="title">Title</label>
-            <input type="text" id="title" min="2" maxlength="30">
+        <form id = "form" onsubmit="addBookToLibrary()">
+            <label for="title" >Title</label>
+            <input required type="text" id="title" min="2" maxlength="30">
             <label for="author">Author</label>
-            <input type="text" id="author">
+            <input required type="text" id="author">
             <label for="pages">Pages</label>
-            <input type="text" id="pages" min="1" max="999999999">
+            <input required type="text" id="pages" min="1" max="999999999">
             <label for="read">Have you read it?</label>
             <input type="checkbox" id="read">
-            <button class = "formInfo" type="submit">Submit</button>
+            <input class = "formInfo" type="submit">
         </form>
 
     </div>
@@ -31,9 +31,10 @@
          <p>Pages</p>
          <p>Status</p>
       </div>
-      
+      <div class = 'books'></div>
       <div id = "array"></div>
 </div>
-</body>
 <script src="script.js"></script>
+</body>
+
 </html>
