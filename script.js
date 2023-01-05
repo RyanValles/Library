@@ -9,19 +9,30 @@ class Book {
 }
 
 //user input and put it into an array
-const input = document.getElementById('input')
-function addBookToLibrary(title, author, pages, read) {
-    const book = new Book(title, author, pages, read)
+let form = document.querySelector('#form')
+
+function addBookToLibrary() {
+    myLibrary.splice(0, myLibrary.length)
+    event.preventDefault();
+    let title = document.querySelector("#title").value
+    let author= document.querySelector("#author").value
+    let pages = document.querySelector("#pages").value
+    let read =  document.querySelector("#read").checked
+        if(read === false){
+            read = 'not read'
+             }else{read = 'read'}
+        
+    let book = new Book(title, author, pages, read)
     myLibrary.push(book);
+    bob()
+    form.reset()
 }
+//array to store books
+let myLibrary = [];
 
-
-const percy = new Book('percy jackson', 'joe', 567, 'read')
 //display books on screen
 let books = document.getElementById('array');
-let myLibrary = [percy];
-//for each book
-for (objects of myLibrary) {
+function bob() {for (objects of myLibrary) {
     // each book property
     for (let prop in objects) {
        Object.prototype.hasOwnProperty.call(prop) 
@@ -29,6 +40,9 @@ for (objects of myLibrary) {
         let eachProp = document.createElement('p');
         eachProp.innerHTML = objects[prop];
         books.appendChild(eachProp);
-      }
-    
-  }
+      }   
+  }}
+
+//submit btn
+  const formInfo = document.querySelector(".formInfo")
+  formInfo.addEventListener('click', addBookToLibrary)
