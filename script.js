@@ -31,16 +31,36 @@ function addBookToLibrary() {
 let myLibrary = [];
 
 //display books on screen
-let books = document.getElementById('array');
-function append() {for (objects of myLibrary) {
-    // each book property
-    for (let prop in objects) {
-       Object.prototype.hasOwnProperty.call(prop) 
-        //create and append object property
-        let eachProp = document.createElement('p');
-        eachProp.innerHTML = objects[prop];
-        books.appendChild(eachProp);
-      }   
-  }}
+let page = document.getElementById('array')
+function append(){ 
+    let books = document.createElement('p')
+     {for (objects of myLibrary) {
+         for (let prop in objects) {
+            ///
+            ///do these indivuadualy so  read button can change read
+             Object.prototype.hasOwnProperty.call(prop) 
+             let eachProp = document.createElement('p');
+             eachProp.innerHTML = objects[prop];
+            books.appendChild(eachProp);
+            page.appendChild(books)
+         } 
+     }
+     const removeBtn = document.createElement('button');
+    removeBtn.innerHTML = "🗑️"
+    removeBtn.classList.add('removeBtn')
+        removeBtn.addEventListener('click', () =>{
+            books.style.display = 'none'
+        })
+    books.appendChild(removeBtn)
+
+    const readBtn = document.createElement('button')
+    readBtn.innerHTML = "🗑️Change Read Status"
+    readBtn.classList.add('readBtn')
+    readBtn.addEventListener('click', () =>{
+     const str = books.textContent
+     books.textContent = str.replace('Read', 'Not read')
+    })
+    books.appendChild(readBtn)
+}}
 
   // delete button
