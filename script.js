@@ -59,7 +59,7 @@ function addBookToLibrary() {
                             page.appendChild(books)
                     }
                     if(objects[prop] != 'Read' && objects[prop] != 'Not read') {
-                        let eachProp = document.createElement('td');
+                        let eachProp = document.createElement('p');
                         eachProp.innerHTML = objects[prop];
                         books.appendChild(eachProp);
                         page.appendChild(books)}
