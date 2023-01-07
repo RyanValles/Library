@@ -12,11 +12,11 @@
         <h1>Library</h1>
         <form id = "form" onsubmit="addBookToLibrary()">
             <label for="title" >Title</label>
-            <input required type="text" id="title" min="2" maxlength="30">
+            <input required type="text" id="title" maxlength="40">
             <label for="author">Author</label>
-            <input required type="text" id="author">
+            <input required type="text" id="author" maxlength="30">
             <label for="pages">Pages</label>
-            <input required type="text" id="pages" min="1" max="999999999">
+            <input required type="text" id="pages" maxlength="7">
             <label for="read">Have you read it?</label>
             <input type="checkbox" id="read">
             <input class = "formInfo" type="submit">
@@ -30,9 +30,12 @@
          <p>Author</p>
          <p>Pages</p>
          <p>Status</p>
-      </div>
-      <div class = 'books'></div>
-      <div id = "array"></div>
+        </div>
+         <div id = "array">
+            </div>
+        </div>
+      
+      
 </div>
 <script src="script.js"></script>
 </body>
