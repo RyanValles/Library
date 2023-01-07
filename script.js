@@ -6,7 +6,7 @@ class Book {
         this.read = read;   
     }
 }
-
+let page = document.getElementById('array')
 //user input and put it into an array
 let form = document.querySelector('#form')
 
@@ -31,9 +31,11 @@ function addBookToLibrary() {
     //append book info and buttons
     function append(){ 
         let books = document.createElement('p')
+        books.classList.add('books')
         {for (objects of myLibrary) {
              for (let prop in objects) {
                 Object.prototype.hasOwnProperty.call(prop)
+                    //read btn
                     if(objects[prop] === 'Read'){
                         const readBtn = document.createElement('button')
                         readBtn.innerHTML = "Read"
@@ -44,6 +46,7 @@ function addBookToLibrary() {
                             })
                         books.appendChild(readBtn)
                         page.appendChild(books)}
+                        //read btn
                     if(objects[prop] === 'Not read'){
                             const readBtn = document.createElement('button')
                             readBtn.innerHTML = "Not read"
@@ -56,7 +59,7 @@ function addBookToLibrary() {
                             page.appendChild(books)
                     }
                     if(objects[prop] != 'Read' && objects[prop] != 'Not read') {
-                        let eachProp = document.createElement('p');
+                        let eachProp = document.createElement('td');
                         eachProp.innerHTML = objects[prop];
                         books.appendChild(eachProp);
                         page.appendChild(books)}
@@ -80,5 +83,3 @@ function addBookToLibrary() {
 //array to store books
 let myLibrary = [];
 
-//display books on screen
-let page = document.getElementById('array')
